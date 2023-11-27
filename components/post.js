@@ -5,7 +5,7 @@ const Post = ({ title, avatar, description }) => {
  return (
     <TouchableOpacity onPress={() => Alert.alert('Clicked', title)}>
       <View style={styles.post}>
-        <Image style={styles.avatar} source={{ uri: avatar }} />
+        <Image style={[styles.avatar, styles.avatarSize]} source={{ uri: avatar }} />
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.description}>{description}</Text>
       </View>
@@ -46,20 +46,26 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     padding: 10,
+    width: '100%',
  },
  post: {
     backgroundColor: '#392e4a',
     borderRadius: 5,
     margin: 10,
     padding: 10,
-    maxWidth: 175,
-
+    width: 170,
+    height: 500,
  },
  avatar: {
     width: '100%',
-    height: 200,
+    height: '100%',
     resizeMode: 'cover',
  },
+ avatarSize: {
+   width: '100%',
+   height: 200,
+   resizeMode: 'cover',
+},
  title: {
     fontSize: 24,
     fontWeight: 'bold',
